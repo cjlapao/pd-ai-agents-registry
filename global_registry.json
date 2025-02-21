@@ -1,0 +1,35 @@
+{
+  "packages": [
+    {
+      "name": "vm-tools",
+      "description": "Basic VM management tools",
+      "type": "chat_agent",
+      "repo_url": "https://github.com/cjlapao/test-agents",
+      "available_versions": [
+        "1.0.0",
+        "1.0.1"
+      ],
+      "agents": [
+        "agents.vm_tools:VMToolsAgent",
+        "agents.vm_stats:VMStatsAgent",
+        "agents.vm_list:VMListAgent"
+      ],
+      "requirements": [
+        "psutil>=5.9.0"
+      ],
+      "icon": "https://raw.githubusercontent.com/cjlapao/test-agents/main/icon.png",
+      "current_version": "1.0.1",
+      "latest_version": "1.0.1",
+      "is_system": true,
+      "is_official": true,
+      "author": "Parallels Desktop Team",
+      "categories": [
+        "system",
+        "vm-management",
+        "tools"
+      ],
+      "company_url": "https://www.parallels.com/",
+      "star_rating": 4.5
+    }
+  ]
+}
