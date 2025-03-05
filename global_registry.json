@@ -1,37 +1,36 @@
 {
   "packages": [
     {
-      "id": "background-agent-example",
-      "name": "Background Agent Example",
-      "description": "Example background agents for the PRL AI Agent system",
-      "type": "background_agent",
-      "repo_url": "https://github.com/cjlapao/pd-ai-example-background-agent",
+      "id": "parallels-desktop-core-agents",
+      "name": "Parallels Desktop Core Agents",
+      "description": "Core agents for the Parallels Desktop system",
+      "repo_url": "https://github.com/Parallels/pd-ai-agent-core-agents",
       "available_versions": [
         "0.1.0"
       ],
       "agent_definitions": [
         {
-          "id": "system_monitor_agent",
-          "name": "System Monitor Agent",
-          "description": "Background agent for monitoring system resources",
+          "id": "pd_vm_health_check_agent",
+          "name": "VM Health Check Agent",
+          "description": "Background agent for monitoring VM health",
           "type": "background_agent",
-          "module_path": "agents.example_agent",
-          "class_name": "SystemMonitorAgent"
+          "module_path": "pd_ai_agent_core_agents.background_agents.health_check_agent",
+          "class_name": "VmHealthCheckAgent"
         },
         {
-          "id": "notification_agent",
-          "name": "Notification Agent",
-          "description": "Background agent for handling system notifications",
-          "type": "background_agent",
-          "module_path": "agents.notification_agent",
-          "class_name": "NotificationAgent"
+          "id": "pd_list_vms_agent",
+          "name": "List VMs Agent",
+          "description": "Agent for listing available VMs",
+          "type": "chat_agent",
+          "module_path": "pd_ai_agent_core_agents.llm_agents.get_vms_agent",
+          "class_name": "GetVmsAgent"
         }
       ],
       "requirements": [
         "psutil>=5.9.0"
       ],
-      "current_version": "1.0.1",
-      "latest_version": "1.0.1",
+      "current_version": "0.1.0",
+      "latest_version": "0.1.0",
       "is_system": true,
       "is_official": true,
       "author": "Parallels Desktop Team",
@@ -41,60 +40,6 @@
         "notifications"
       ],
       "icon": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSJjdXJyZW50Q29sb3IiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBjbGFzcz0ibHVjaWRlIGx1Y2lkZS1hY3Rpdml0eSI+PHBhdGggZD0iTTIyIDEyaC00bC0zIDlMOSAzIDYgMTJIMiIvPjwvc3ZnPg==",
-      "company_url": "https://www.parallels.com/",
-      "star_rating": 4.5
-    },
-    {
-      "id": "vm-tools",
-      "name": "VM Tools",
-      "description": "Basic VM management tools",
-      "type": "chat_agent",
-      "repo_url": "https://github.com/cjlapao/test-agents",
-      "available_versions": [
-        "1.0.0",
-        "1.0.1",
-        "1.0.2"
-      ],
-      "agent_definitions": [
-        {
-          "id": "vm_tools_agent",
-          "name": "VM Tools Agent",
-          "description": "Agent for managing VM tools and operations",
-          "type": "chat_agent",
-          "module_path": "agents.vm_tools",
-          "class_name": "VMToolsAgent"
-        },
-        {
-          "id": "vm_stats_agent",
-          "name": "VM Stats Agent",
-          "description": "Agent for retrieving VM statistics",
-          "type": "chat_agent",
-          "module_path": "agents.vm_stats",
-          "class_name": "VMStatsAgent"
-        },
-        {
-          "id": "vm_list_agent",
-          "name": "VM List Agent",
-          "description": "Agent for listing available VMs",
-          "type": "chat_agent",
-          "module_path": "agents.vm_list",
-          "class_name": "VMListAgent"
-        }
-      ],
-      "requirements": [
-        "psutil>=5.9.0"
-      ],
-      "icon": "https://raw.githubusercontent.com/cjlapao/test-agents/main/icon.png",
-      "current_version": "1.0.1",
-      "latest_version": "1.0.1",
-      "is_system": true,
-      "is_official": true,
-      "author": "Parallels Desktop Team",
-      "categories": [
-        "system",
-        "vm-management",
-        "tools"
-      ],
       "company_url": "https://www.parallels.com/",
       "star_rating": 4.5
     },
