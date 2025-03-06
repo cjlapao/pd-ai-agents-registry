@@ -14,7 +14,7 @@
           "name": "VM Health Check Agent",
           "description": "Background agent for monitoring VM health",
           "type": "background_agent",
-          "module_path": "pd_ai_agent_core_agents.background_agents.health_check_agent",
+          "module_path": "pd_ai_agent_core_agents.background_agents.health_check_agent.health_check_agent",
           "class_name": "VmHealthCheckAgent"
         },
         {

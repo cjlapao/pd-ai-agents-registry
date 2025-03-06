@@ -1,0 +1,11 @@
+{
+  "version": "0.1.1",
+  "notes": "# Release Notes for v0.1.1\nWe've added a new feature to the agent that allows you to chat with the agent about the VM.",
+  "pub_date": "2025-03-06T07:00:24Z",
+  "platforms": {
+    "darwin-aarch64": {
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTM1RNTEIxN3pFd0x2OWFESUFiaEthcU00bk1jU0c1dFpBZ0llRnlsdDBuNDV1aDQvSjVqQVMvOGxZZUpROVF6SzlBTXNkQm1YTzNhQWE2ODdZU0VpRENOVDVaYVRLcUFvPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzQxMjQwODMyCWZpbGU6UGFyYWxsZWxzIERlc2t0b3AgQWdlbnQuYXBwLnRhci5negpOTS9YbEhSWS90TExkNWlIS01YUXZuSmlwOWpBLzJkTkNjbmxxVWxaVlc0LzkrRFBFL3Y1NTE1ZTFjQm5qM0VybnpUcFJ0WTVJUlJSZ2Nzc2pkVXlDUT09Cg==",
+      "url": "https://raw.githubusercontent.com/cjlapao/pd-ai-agents-registry/refs/heads/main/releases/v0.1.1/macos/arm/Parallels Desktop Agent.app.tar.gz"
+    }
+  }
+}
