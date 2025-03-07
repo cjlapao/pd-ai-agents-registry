@@ -10,20 +10,68 @@
       ],
       "agent_definitions": [
         {
-          "id": "pd_vm_health_check_agent",
+          "id": "pd_core_agents_vm_health_check_agent",
           "name": "VM Health Check Agent",
           "description": "Background agent for monitoring VM health",
           "type": "background_agent",
-          "module_path": "pd_ai_agent_core_agents.background_agents.health_check_agent.health_check_agent",
+          "module_path": "pd_ai_core_agents.background_agents.health_check.health_check_agent",
           "class_name": "VmHealthCheckAgent"
         },
         {
-          "id": "pd_list_vms_agent",
+          "id": "pd_core_agents_list_vms_agent",
           "name": "List VMs Agent",
           "description": "Agent for listing available VMs",
           "type": "chat_agent",
-          "module_path": "pd_ai_agent_core_agents.llm_agents.get_vms_agent",
+          "module_path": "pd_ai_core_agents.llm_agents.get_vms_agent",
           "class_name": "GetVmsAgent"
+        },
+        {
+          "id": "pd_core_agents_create_vm_agent",
+          "name": "Create VM Agent",
+          "description": "Agent for creating a new VM",
+          "type": "chat_agent",
+          "module_path": "pd_ai_core_agents.llm_agents.create_vm_agent",
+          "class_name": "CreateVmAgent"
+        },
+        {
+          "id": "pd_core_agents_execute_on_vms_agent",
+          "name": "Execute on VMs Agent",
+          "description": "Agent for executing a command on a VM",
+          "type": "chat_agent",
+          "module_path": "pd_ai_core_agents.llm_agents.execute_on_vm_agent",
+          "class_name": "ExecuteOnVmAgent"
+        },
+        {
+          "id": "pd_core_agents_tech_support_agent",
+          "name": "Tech Support Agent",
+          "description": "Agent for providing technical support",
+          "type": "chat_agent",
+          "module_path": "pd_ai_core_agents.llm_agents.tech_support_agent",
+          "class_name": "TechSupportAgent"
+        },
+        {
+          "id": "pd_core_agents_vm_health_check_agent",
+          "name": "VM Health Check Agent",
+          "description": "Agent for checking the health of a VM",
+          "type": "chat_agent",
+          "module_path": "pd_ai_core_agents.llm_agents.vm_healthcheck_agent",
+          "class_name": "VmHealthCheckAgent"
+        },
+        {
+          "id": "pd_core_agents_vm_operations_agent",
+          "name": "VM Operations Agent",
+          "description": "Agent for starting, stopping, suspending, resuming, pausing, or deleting a VM",
+          "type": "chat_agent",
+          "module_path": "pd_ai_core_agents.llm_agents.vm_operations_agent",
+          "class_name": "VmOperationsAgent"
+        },
+        {
+          "id": "pd_core_agents_webpage_analyzer_agent",
+          "name": "Webpage Analyzer Agent",
+          "description": "Agent for analyzing webpages for what the user is trying to achieve",
+          "type": "chat_agent",
+          "module_path": "pd_ai_core_agents.llm_agents.webpage_analyzer_agent",
+          "class_name": "WebpageAnalyzerAgent"
         }
       ],
       "requirements": [
