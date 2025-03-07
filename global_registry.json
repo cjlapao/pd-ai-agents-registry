@@ -44,21 +44,29 @@
       "star_rating": 4.5
     },
     {
-      "id": "cjlapao-vm-updates-agent",
-      "name": "VM Updates Agent",
-      "description": "Basic VM updates agent that checks for updates and applies them when a VM is started",
-      "repo_url": "https://github.com/cjlapao/pd-ai-updates-agent",
+      "id": "pd-vm-updates-agent",
+      "name": "Virtual Machine Updates Agent",
+      "description": "Basic virtual machine updates agent that checks for updates and applies them when a VM is started or during chat",
+      "repo_url": "https://github.com/Parallels/pd-ai-agent-updates-agents",
       "available_versions": [
         "0.1.0"
       ],
       "agent_definitions": [
         {
-          "id": "security_updates_agent",
-          "name": "Security Updates Agent",
-          "description": "  Background agent for monitoring security updates",
+          "id": "pd_security_checks_agent",
+          "name": "Background Updates Checks Agent",
+          "description": "Background agent for checking for updates",
           "type": "background_agent",
-          "module_path": "background-agent.security-checks",
+          "module_path": "pd_ai_updates_agent.background-agent.security-checks",
           "class_name": "SecurityUpdateChecksAgent"
+        },
+        {
+          "id": "pd_check_updates_agent",
+          "name": "Check Updates Agent",
+          "description": "Agent for checking for updates",
+          "type": "llm_agent",
+          "module_path": "pd_ai_updates_agent.llm_agents.analyse_updates",
+          "class_name": "AnalyseUpdatesAgent"
         }
       ],
       "requirements": [
@@ -68,7 +76,7 @@
       "latest_version": "0.1.0",
       "is_system": false,
       "is_official": false,
-      "author": "Carlos Lapao",
+      "author": "Parallels Desktop",
       "categories": [
         "system",
         "monitoring",
