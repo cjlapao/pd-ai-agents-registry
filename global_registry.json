@@ -105,7 +105,7 @@
           "name": "Background Updates Checks Agent",
           "description": "Background agent for checking for updates",
           "type": "background_agent",
-          "module_path": "pd_ai_updates_agent.background-agent.security-checks",
+          "module_path": "pd_ai_updates_agent.background_agent.security_checks",
           "class_name": "SecurityUpdateChecksAgent"
         },
         {
