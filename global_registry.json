@@ -113,8 +113,8 @@
           "name": "Check Updates Agent",
           "description": "Agent for checking for updates",
           "type": "llm_agent",
-          "module_path": "pd_ai_updates_agent.llm_agents.analyse_updates",
-          "class_name": "AnalyseUpdatesAgent"
+          "module_path": "pd_ai_updates_agent.llm_agents.analyze_updates",
+          "class_name": "AnalyzeUpdatesAgent"
         }
       ],
       "requirements": [

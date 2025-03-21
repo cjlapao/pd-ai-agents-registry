@@ -1,0 +1,27 @@
+{{- if .Values.certManager.enabled -}}
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: {{ .Release.Name }}-backend-cert
+  namespace: {{ .Values.certManager.namespace }}
+  labels:
+    app: {{ .Release.Name }}-backend
+spec:
+  secretName: {{ .Release.Name }}-backend-tls
+  issuerRef:
+    name: {{ .Values.certManager.issuer.name }}
+    kind: {{ .Values.certManager.issuer.kind }}
+  commonName: {{ .Values.certManager.commonName | default (index .Values.istio.virtualService.hosts 0) }}
+  dnsNames:
+  {{- if .Values.certManager.dnsNames }}
+    {{- toYaml .Values.certManager.dnsNames | nindent 4 }}
+  {{- else if .Values.istio.enabled }}
+    {{- range .Values.istio.virtualService.hosts }}
+    - {{ . }}
+    {{- end }}
+  {{- else if .Values.ingress.enabled }}
+    {{- range .Values.ingress.hosts }}
+    - {{ .host }}
+    {{- end }}
+  {{- end }}
+{{- end }} 

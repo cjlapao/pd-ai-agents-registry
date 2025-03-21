@@ -1,0 +1,93 @@
+# Default values for backend.
+replicaCount: 1
+
+image:
+  repository: cjlapao/pd-ai-agent-registry
+  pullPolicy: Always
+  tag: "latest"
+
+service:
+  type: ClusterIP
+  port: 80
+  targetPort: 80
+
+environment:
+  configMap:
+    APP_ENV: "production"
+    SERVER__PORT: "80"
+    SERVER__HOST: ""
+    SERVER__SCHEME: "https"
+
+  secret:
+    S3__BUCKET: ""
+    S3__ACCESS_KEY_ID: ""
+    S3__SECRET_ACCESS_KEY: ""
+    S3__ENDPOINT: ""
+    MONGODB__URI: ""
+    MONGODB__DATABASE: ""
+    JWT__SECRET: ""
+    JWT__EXPIRY_HOUR: ""
+
+ingress:
+  enabled: false
+  className: "nginx"
+  annotations:
+    {}
+    # kubernetes.io/ingress.class: nginx
+    # kubernetes.io/tls-acme: "true"
+  hosts:
+    - host: backend.example.com
+      paths:
+        - path: /
+          pathType: Prefix
+  tls: []
+  #  - secretName: backend-tls
+  #    hosts:
+  #      - backend.example.com
+
+# Istio Gateway configuration
+istio:
+  enabled: false
+  gateway:
+    name: "backend-gateway"
+    selector:
+      istio: ingressgateway
+  virtualService:
+    hosts:
+      - backend.example.com
+    gateways:
+      - backend-gateway
+    http:
+      - route:
+          - destination:
+              host: backend
+              port:
+                number: 80
+
+# Cert-manager configuration
+certManager:
+  enabled: false
+  namespace: "cert-manager"
+  issuer:
+    name: "letsencrypt-prod"
+    kind: "ClusterIssuer" # Or "Issuer" if it's namespace-scoped
+  # Optional: Specify a common name, otherwise first host will be used
+  commonName: ""
+  # Optional: Specify DNS names, otherwise hosts from ingress/istio will be used
+  dnsNames: []
+  # - backend.example.com
+  # - api.example.com
+
+resources:
+  limits:
+    cpu: 500m
+    memory: 512Mi
+  requests:
+    cpu: 100m
+    memory: 128Mi
+
+nodeSelector: {}
+
+tolerations: []
+
+affinity: {}
