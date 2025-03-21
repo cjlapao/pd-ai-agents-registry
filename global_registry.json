@@ -6,7 +6,7 @@
       "description": "Core agents for the Parallels Desktop system",
       "repo_url": "https://github.com/Parallels/pd-ai-agent-core-agents",
       "available_versions": [
-        "0.1.0"
+        "1.0.0"
       ],
       "agent_definitions": [
         {
@@ -77,8 +77,8 @@
       "requirements": [
         "psutil>=5.9.0"
       ],
-      "current_version": "0.1.0",
-      "latest_version": "0.1.0",
+      "current_version": "1.0.0",
+      "latest_version": "1.0.0",
       "is_system": true,
       "is_official": true,
       "author": "Parallels Desktop Team",
