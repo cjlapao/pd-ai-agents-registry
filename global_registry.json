@@ -97,7 +97,8 @@
       "description": "Basic virtual machine updates agent that checks for updates and applies them when a VM is started or during chat",
       "repo_url": "https://github.com/Parallels/pd-ai-agent-updates-agents",
       "available_versions": [
-        "0.1.0"
+        "0.1.0",
+        "0.1.1"
       ],
       "agent_definitions": [
         {
@@ -114,14 +115,14 @@
           "description": "Agent for checking for updates",
           "type": "llm_agent",
           "module_path": "pd_ai_updates_agent.llm_agents.analyze_updates",
-          "class_name": "AnalyzeUpdatesAgent"
+          "class_name": "AnalyseUpdatesAgent"
         }
       ],
       "requirements": [
         "psutil>=5.9.0"
       ],
       "current_version": "0.1.0",
-      "latest_version": "0.1.0",
+      "latest_version": "0.1.1",
       "is_system": false,
       "is_official": false,
       "author": "Parallels Desktop",
